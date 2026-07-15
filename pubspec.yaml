@@ -1,0 +1,78 @@
+name: al_katib_al_muhtaref
+description: منصة احترافية لكتابة السيناريو - الكاتب المحترف
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # التخزين المحلي
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.3
+
+  # إدارة الحالة
+  provider: ^6.1.1
+
+  # معالجة الملفات والصور
+  file_picker: ^8.0.0
+  path: ^1.9.0
+  image_picker: ^1.0.7
+
+  # التصدير والطباعة
+  pdf: ^3.10.7
+  printing: ^5.11.1
+  share_plus: ^10.0.0
+
+  # واجهة المستخدم
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
+  flutter_colorpicker: ^1.0.3
+  easy_localization: ^3.0.7
+
+  # أدوات مساعدة
+  uuid: ^4.3.3
+  intl: ^0.20.2
+  url_launcher: ^6.3.0
+
+  # عرض الصور
+  photo_view: ^0.14.0
+
+  # معاينة النص
+  flutter_markdown: ^0.6.0
+
+  # الشبكة (لأي استدعاء API مستقبلي)
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.9
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/translations/
+    - assets/fonts/
+
+  # ملاحظة تصحيح: لم يعد هناك قسم "fonts:" هنا. الخطوط (Cairo, Amiri,
+  # Noto Naskh Arabic) تُجلب الآن تلقائياً وقت التشغيل عبر حزمة google_fonts
+  # (راجع lib/core/utils/font_helper.dart)، فلا حاجة لتحميل أي ملف .ttf
+  # يدوياً أو لوضعه في assets/fonts/.
+
+# ملاحظات التصحيح:
+# 1. تم حذف حزمة "arabic_number" لأنها غير موثوقة/غير موجودة رسمياً على pub.dev.
+# 2. تم حذف "translate" و "flutter_translate" و "easy_localization" معاً لأنها
+#    ثلاث حزم ترجمة متعارضة الغرض؛ الترجمة الفعلية تتم هنا عبر TranslationService
+#    الذي يستخدم http فقط (يمكنك ربطه بأي API ترجمة تختاره لاحقاً).
+# 3. تم حذف "extended_image" لعدم استخدامها فعلياً في الكود.
+# 4. تم تحديث flutter_lints إلى ^4.0.0 وintl إلى ^0.19.0 لتوافق أفضل مع Flutter الحديث.
